@@ -1,0 +1,995 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "Acme", sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: lemonchiffon;
+}
+
+header > * {
+  display: flex;
+  margin: 15px 40px;
+}
+
+header {
+  width: 100%;
+  height: 80px;
+  background-color: #0DB399;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  border-bottom: 2px solid black;
+  top: 0;
+  z-index: 10;
+}
+header > .leftSide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header > .leftSide .logo {
+  width: 200px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header > .leftSide .logo figure {
+  width: 60%;
+  height: 60%;
+}
+header > .leftSide .logo figure img {
+  width: 100%;
+  height: 100%;
+}
+header > .leftSide > ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header > .leftSide > ul > li {
+  padding: 5px 20px;
+  list-style-type: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+header > .leftSide > ul > li a {
+  color: aliceblue;
+  text-decoration: none;
+  transition: 0.4s;
+}
+header > .leftSide > ul > li > i {
+  font-size: 12px;
+  font-weight: bolder;
+  color: aliceblue;
+  padding: 0 5px;
+  transition: 0.4s;
+}
+header > .leftSide > ul > li:hover > ul {
+  opacity: 1;
+  visibility: visible;
+}
+header > .leftSide > ul > li > ul {
+  background-color: #0DB399;
+  width: 150%;
+  height: auto;
+  padding: 30px 0;
+  position: absolute;
+  left: 0;
+  bottom: -370px;
+  border-radius: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.4s;
+}
+header > .leftSide > ul > li > ul > li {
+  width: 100%;
+  padding: 10px 20px;
+  color: black;
+  list-style-type: none;
+}
+header > .leftSide > ul > li > ul > li > a {
+  color: aliceblue;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+header > .leftSide > ul > li > ul > li > a:hover {
+  color: red;
+}
+header > .leftSide > ul > li:nth-of-type(2) {
+  position: static;
+}
+header > .leftSide > ul > li:nth-of-type(2) > ul {
+  width: 95%;
+  height: 350px;
+  background-color: #0DB399;
+  position: absolute;
+  bottom: -365px;
+  left: 2.5%;
+  padding: 35px 0 !important;
+  display: flex;
+  justify-content: start;
+  transition: 0.4s;
+  opacity: 0;
+  visibility: hidden;
+}
+header > .leftSide > ul > li:nth-of-type(2) > ul > li {
+  color: aliceblue;
+  width: 280px;
+  height: 200px;
+  margin: 0 28px;
+  padding: 20px 0;
+}
+header > .leftSide > ul > li:nth-of-type(2) > ul > li > figure {
+  width: 280px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 40px 40px 0 40px;
+  border: 1px solid black;
+  box-shadow: 10px 5px 5px black;
+}
+header > .leftSide > ul > li:nth-of-type(2) > ul > li > figure > img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  transition: 0.4s;
+}
+header > .leftSide > ul > li:nth-of-type(2) > ul > li > figure > img:hover {
+  width: 120%;
+  height: 120%;
+  top: -10%;
+  left: -10%;
+}
+header > .leftSide > ul > li:nth-of-type(2) > ul > li > span {
+  width: 100%;
+  height: 100px;
+  color: aliceblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  text-align: center;
+  line-height: 30px;
+}
+header > .leftSide > ul > li:nth-of-type(2) > ul > li > span > a {
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  text-decoration: none;
+  transition: 0.4s;
+  color: aliceblue;
+}
+header > .leftSide > ul > li:nth-of-type(2) > ul > li > span > a:hover {
+  text-decoration: underline;
+  color: red;
+}
+header > .leftSide > ul > li:nth-of-type(2):hover ul {
+  opacity: 1;
+  visibility: visible;
+}
+header .rightSide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .rightSide > .searchIcon {
+  width: 40px;
+  height: 40px;
+  color: aliceblue;
+  font-size: 25px;
+  font-weight: bolder;
+  display: flex;
+  align-items: center;
+}
+header .rightSide > .subscribe {
+  width: 140px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: aliceblue;
+  font-size: 15px;
+  border: 1px solid black;
+  border-radius: 50px;
+  transition: 0.4s;
+  box-shadow: 5px 2.5px 2.5px black;
+}
+header .rightSide > .subscribe a {
+  color: black;
+  transition: 0.4s;
+  text-decoration: none;
+}
+header .rightSide > .subscribe a:checked {
+  color: black;
+}
+header .rightSide > .subscribe:hover {
+  background-color: black;
+  border: 1px solid #0DB399;
+}
+header .rightSide > .subscribe:hover > a {
+  color: aliceblue;
+}
+
+.secondPart {
+  width: 100%;
+  height: 120vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 5vh;
+}
+.secondPart > .second1 {
+  width: 45%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+}
+.secondPart > .second1 > figure {
+  width: 100%;
+  height: 100%;
+  border: 3px solid black;
+  border-radius: 40px;
+  overflow: hidden;
+  position: relative;
+  background-color: black;
+  box-shadow: 10px 5px 5px black;
+  transition: 0.4s;
+  outline: none;
+}
+.secondPart > .second1 > figure:hover {
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2039215686);
+}
+.secondPart > .second1 > figure:hover > img {
+  opacity: 0.5;
+}
+.secondPart > .second1 > figure:hover > figcaption {
+  text-decoration: underline;
+  color: red;
+}
+.secondPart > .second1 > figure > img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 40px;
+  position: relative;
+  top: 0;
+  left: 0;
+  transition: 0.4s;
+  opacity: 1;
+}
+.secondPart > .second1 > figure > figcaption {
+  position: absolute;
+  width: 90%;
+  bottom: 50px;
+  left: 30px;
+  color: black;
+  font-size: 28px;
+  font-weight: bold;
+  transition: 0.4s;
+}
+.secondPart > .second1 > figure > figcaption:hover {
+  text-decoration: underline;
+}
+.secondPart > .second1 > figure > figcaption::before {
+  content: "TYPOGRAPHY";
+  width: auto;
+  height: auto;
+  padding: 10px 20px;
+  background-color: #FE9821;
+  border-radius: 50px;
+  bottom: 110px;
+  position: absolute;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  box-shadow: 5px 2.5px 2.5px black;
+  color: aliceblue;
+}
+.secondPart > .second2 {
+  width: 45%;
+  height: 80%;
+}
+.secondPart > .second2 figure {
+  width: 100%;
+  height: 47%;
+  display: flex;
+  align-items: center;
+  border: 3px solid black;
+  border-radius: 40px;
+  overflow: hidden;
+  background-color: #000000;
+  position: relative;
+  box-shadow: 10px 5px 5px black;
+  transition: 0.4s;
+  outline: none;
+}
+.secondPart > .second2 figure:hover {
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2039215686);
+}
+.secondPart > .second2 figure:hover > img {
+  opacity: 0.5;
+}
+.secondPart > .second2 figure:hover > figcaption {
+  text-decoration: underline;
+  color: red;
+}
+.secondPart > .second2 figure:last-of-type {
+  margin-top: 6%;
+}
+.secondPart > .second2 figure img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 40px;
+  position: relative;
+  top: 0;
+  left: 0;
+  transition: 0.4s;
+  opacity: 0.9;
+}
+.secondPart > .second2 figure > figcaption {
+  position: absolute;
+  width: 90%;
+  bottom: 50px;
+  left: 30px;
+  color: rgba(0, 0, 0, 0.919);
+  font-size: 28px;
+  font-weight: bold;
+  transition: 0.4s;
+}
+.secondPart > .second2 figure > figcaption::before {
+  content: "ENTERTAINMENT";
+  width: auto;
+  height: auto;
+  padding: 10px 20px;
+  background-color: #8D80FF;
+  border-radius: 50px;
+  bottom: 110px;
+  position: absolute;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  box-shadow: 5px 2.5px 2.5px black;
+  color: aliceblue;
+}
+
+.thirdPart {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.thirdPart .thirdPartTitle {
+  width: 90%;
+  padding: 20px 0;
+  font-size: 30px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.thirdPart .line {
+  width: 90%;
+  height: 4px;
+  background-color: rgba(0, 0, 0, 0.8392156863);
+  position: relative;
+}
+.thirdPart .line::after {
+  content: "";
+  width: 10%;
+  height: 100%;
+  background-color: red;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.thirdPart .threeBox {
+  width: 90%;
+  height: 300px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.thirdPart .threeBox > div {
+  width: 30%;
+  height: 90%;
+  margin: 2%;
+  border-radius: 20px;
+  border: 2px solid black;
+  background-color: #E75063;
+  box-shadow: 10px 5px 5px black;
+}
+.thirdPart .threeBox > div:first-of-type > a {
+  background-color: #67A1FF;
+}
+.thirdPart .threeBox > div:nth-of-type(2) > a {
+  background-color: #44CDCF;
+}
+.thirdPart .threeBox > div:last-of-type > a {
+  background-color: #FE6551;
+}
+.thirdPart .threeBox > div:hover > a {
+  box-shadow: 0 0 0 red;
+}
+.thirdPart .threeBox > div:hover > h4 {
+  text-decoration: underline;
+}
+.thirdPart .threeBox > div > a {
+  width: 100px;
+  padding: 7px;
+  margin: 40px 0 10px 20px;
+  border: 1px solid black;
+  background-color: #FE9821;
+  color: aliceblue;
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  text-transform: capitalize;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 5px 2.5px 2.5px black;
+  transition: 0.4s;
+}
+.thirdPart .threeBox > div > h4 {
+  font-size: 30px;
+  font-weight: bold;
+  padding: 7px;
+  margin: 10px 0 10px 20px;
+  color: aliceblue;
+  transition: 0.4s;
+}
+.thirdPart .threeBox > div > ul {
+  width: 90%;
+  height: auto;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 7px;
+  margin: 10px 0 10px 20px;
+}
+.thirdPart .threeBox > div > ul > li {
+  color: aliceblue;
+  margin-right: 20px;
+  font-size: 10px;
+}
+.thirdPart .threeBox > div > ul > li:first-of-type {
+  list-style-type: none;
+}
+
+.fourthPart {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  position: relative;
+  margin-top: 95px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.fourthPart::before {
+  content: "";
+  width: 200%;
+  height: 70vh;
+  background-color: rgba(209, 209, 209, 0.7450980392);
+  transform: rotate(5deg);
+  margin: 5% -20%;
+  z-index: -10;
+  position: absolute;
+  right: 0;
+}
+.fourthPart > .bigBox {
+  width: 30%;
+  height: auto;
+  border: 2px solid black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: calc(40vh - 140px);
+  padding: 20px;
+  margin: 1%;
+  border-radius: 30px;
+  background-color: #fff;
+  box-shadow: 10px 5px 5px black;
+}
+.fourthPart > .bigBox:nth-of-type(2) > figure::after {
+  content: "CREATIVE IDEA" !important;
+  background-color: #FE9821 !important;
+}
+.fourthPart > .bigBox:hover > figure::after {
+  visibility: visible;
+  opacity: 1;
+  width: 150px;
+  height: 30px;
+}
+.fourthPart > .bigBox:hover > h4 {
+  color: red;
+  text-decoration: underline;
+}
+.fourthPart > .bigBox:hover > figure > img {
+  opacity: 0.5;
+}
+.fourthPart > .bigBox figure {
+  width: 90%;
+  height: 280px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #FE9821;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border: 2px solid black;
+  border-radius: 20px 20px 0 20px;
+  box-shadow: 5px 2.5px 2.5px black;
+  overflow: hidden;
+  position: relative;
+  top: -10%;
+  background-color: black;
+}
+.fourthPart > .bigBox figure::after {
+  color: #fff;
+  width: 0;
+  height: 0;
+  border-radius: 20px;
+  font-size: 12px;
+  border: 2px solid black;
+  box-shadow: 5px 2.5px 2.5px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  transition: 0.4s;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+}
+.fourthPart > .bigBox figure:first-of-type::after, .fourthPart > .bigBox figure:last-of-type::after {
+  content: "ENTERTAINMENT";
+  background-color: #67A1FF;
+}
+.fourthPart > .bigBox figure > img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: relative;
+  transition: 0.4s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: 0.4s;
+}
+.fourthPart > .bigBox > h4,
+.fourthPart > .bigBox > span {
+  width: 90%;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  text-align: center;
+  transition: 0.4s;
+}
+.fourthPart > .bigBox > h4:hover {
+  color: red;
+  text-decoration: underline;
+}
+.fourthPart > .bigBox > span > ul {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -4%;
+}
+.fourthPart > .bigBox > span > ul > li {
+  width: 30%;
+  font-size: 15px;
+}
+.fourthPart > .bigBox > span > ul > li:first-of-type, .fourthPart > .bigBox > span > ul > li:nth-of-type(2) {
+  list-style-type: none;
+  font-weight: bold;
+}
+.fourthPart > .bigBox > span > ul > li:last-of-type {
+  margin: 0 5%;
+}
+.fourthPart > .bigBox > span > ul > li > img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.fifthPart {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fifthPart > .bigBox {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.fifthPart > .bigBox .thirdPartTitle {
+  width: 90%;
+  padding: 20px 0;
+  font-size: 30px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.fifthPart > .bigBox .line {
+  width: 90%;
+  height: 4px;
+  background-color: rgba(0, 0, 0, 0.8392156863);
+  position: relative;
+}
+.fifthPart > .bigBox .line::after {
+  content: "";
+  width: 20%;
+  height: 100%;
+  background-color: red;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.fifthPart > .bigBox > .mainBox {
+  margin-top: 30px;
+  width: 90%;
+  height: auto;
+  display: flex;
+  justify-content: space-evenly;
+  border-radius: 30px;
+  box-shadow: 10px 5px 5px black;
+  border: 3px solid black;
+  padding: 20px;
+  background-color: #fff;
+}
+.fifthPart > .bigBox > .mainBox:last-of-type {
+  margin-bottom: 40px;
+}
+.fifthPart > .bigBox > .mainBox:nth-of-type(3) > figure::after {
+  content: "CREATIVE IDEA" !important;
+  background-color: #FE9821 !important;
+}
+.fifthPart > .bigBox > .mainBox:nth-of-type(2) > figure::after {
+  background-color: #0DB399 !important;
+}
+.fifthPart > .bigBox > .mainBox > figure {
+  width: 40%;
+  height: 300px;
+  border: 3px solid black;
+  box-shadow: 5px 2.5px 2.5px black;
+  overflow: hidden;
+  border-radius: 30px 30px 0 30px;
+  position: relative;
+  background-color: #000000;
+}
+.fifthPart > .bigBox > .mainBox > figure:hover::after {
+  visibility: visible;
+  opacity: 1;
+  width: 150px;
+  height: 30px;
+}
+.fifthPart > .bigBox > .mainBox > figure:hover > img {
+  opacity: 0.5;
+}
+.fifthPart > .bigBox > .mainBox > figure::after {
+  color: #fff;
+  width: 0;
+  height: 0;
+  border-radius: 20px;
+  font-size: 12px;
+  border: 2px solid black;
+  box-shadow: 5px 2.5px 2.5px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  transition: 0.4s;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+}
+.fifthPart > .bigBox > .mainBox > figure:first-of-type::after, .fifthPart > .bigBox > .mainBox > figure:last-of-type::after {
+  content: "ENTERTAINMENT";
+  background-color: #67A1FF;
+}
+.fifthPart > .bigBox > .mainBox > figure > img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 1;
+  transition: 0.4s;
+}
+.fifthPart > .bigBox > .mainBox > .text {
+  width: 50%;
+  height: auto;
+}
+.fifthPart > .bigBox > .mainBox > .text > * {
+  margin-bottom: 15px;
+}
+.fifthPart > .bigBox > .mainBox > .text > h6 {
+  margin-top: 10px;
+}
+.fifthPart > .bigBox > .mainBox > .text > h6 {
+  border-top: 3px dotted red;
+  font-size: 16px;
+  padding: 20px;
+}
+.fifthPart > .bigBox > .mainBox > .text > h3 {
+  padding-top: 20px;
+}
+.fifthPart > .bigBox > .mainBox > .text > h3:hover {
+  color: red;
+  text-decoration: underline;
+}
+.fifthPart > .bigBox > .mainBox > .text > h3 {
+  font-size: 25px;
+  text-transform: capitalize;
+}
+.fifthPart > .bigBox > .mainBox > .text > span > ul {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fifthPart > .bigBox > .mainBox > .text > span > ul > li {
+  width: 30%;
+  font-size: 15px;
+}
+.fifthPart > .bigBox > .mainBox > .text > span > ul > li:nth-of-type(2), .fifthPart > .bigBox > .mainBox > .text > span > ul > li:first-of-type {
+  margin-left: -15%;
+  list-style-type: none;
+  font-weight: bold;
+}
+.fifthPart > .bigBox > .mainBox > .text > span > ul > li:last-of-type {
+  margin-left: 10%;
+}
+.fifthPart > .bigBox > .mainBox > .text > span > ul > li > img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.fifthPart > .bigBox > .mainBox > .text > a {
+  width: 200px;
+  height: auto;
+  padding: 10px 30px;
+  border: 1px solid black;
+  background-color: #FE9821;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px;
+  font-size: 20px;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 5px 2.5px 2.5px black;
+  transition: 0.4s;
+  text-transform: capitalize;
+}
+.fifthPart > .bigBox > .mainBox > .text > a :visited {
+  color: #fff;
+}
+.fifthPart > .bigBox > .mainBox > .text > a > i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 10px;
+}
+.fifthPart > .bigBox > .mainBox > .text > a:hover {
+  background-color: #000000;
+  border: 1px solid #fff;
+}
+
+.button {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button > ul {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button > ul > li {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+  margin: 0 10px;
+}
+.button > ul > li:hover > a {
+  color: red;
+}
+.button > ul > li:hover {
+  border: 2px solid red;
+}
+.button > ul > li > a {
+  color: black;
+  font-size: 20px;
+  text-decoration: none;
+  transition: 0.4s;
+}
+
+.gridBox {
+  width: 90%;
+  height: 40vh;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  justify-content: center;
+  align-content: center;
+  gap: 20px;
+  margin: 5%;
+}
+.gridBox > div {
+  border: 3px solid black;
+  background-color: rgba(0, 0, 0, 0.715);
+  color: white;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 5px 2.5px 2.5px black;
+  position: relative;
+}
+.gridBox > div > .borderHover {
+  width: 110%;
+  height: 110%;
+  border: 2px solid #fff;
+  position: absolute;
+  top: -5%;
+  left: -5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+  opacity: 0;
+  visibility: hidden;
+  border-radius: 20px;
+}
+.gridBox > div > .borderHover > i {
+  font-size: 30px;
+  color: #fff;
+}
+.gridBox > div:hover > .borderHover {
+  width: 80%;
+  height: 80%;
+  left: 10%;
+  top: 10%;
+  opacity: 1;
+  visibility: visible;
+}
+.gridBox > div:nth-of-type(2) {
+  grid-area: 1/2/span 2/span 2;
+}
+.gridBox > div:nth-of-type(3) {
+  grid-area: 1/4/span 1/span 2;
+}
+.gridBox > div:nth-of-type(4) {
+  grid-area: 1/6/span 2/span 2;
+}
+.gridBox > div:nth-of-type(11) {
+  grid-area: 2/8/span 1/span 2;
+}
+.gridBox > div > figure {
+  width: 100%;
+  height: 100%;
+}
+.gridBox > div > figure > img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+footer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer > .footer {
+  width: 90%;
+  height: auto;
+  border-top: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer > .footer > div {
+  width: 30%;
+  height: 70px;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer > .footer > div > h6 {
+  font-size: 16px;
+  font-weight: 100;
+}
+footer > .footer > div > ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+}
+footer > .footer > div > ul > li {
+  margin: 0 10px;
+}
+footer > .footer > div > ul > li::before {
+  content: "";
+  border-left: 1px solid black;
+  padding-left: 15px;
+}
+footer > .footer > div > ul > li:nth-of-type(1)::before {
+  border-left: none;
+}
+footer > .footer > div:nth-of-type(2) > span {
+  padding: 8px;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 5px 2.5px 2.5px black;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+}
+footer > .footer > div:nth-of-type(2) > span:hover {
+  transform: translate(0, -10px);
+}
+footer > .footer > div:nth-of-type(2) > span > a {
+  text-decoration: none;
+}
+footer > .footer > div:nth-of-type(2) > span > a > i {
+  font-size: 25px;
+  color: #000000;
+}
+footer > .footer > div:nth-of-type(2) > span > a :visited {
+  color: #000000;
+}/*# sourceMappingURL=master.css.map */
